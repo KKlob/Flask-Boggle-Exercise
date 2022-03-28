@@ -1,0 +1,45 @@
+#boggle_board td {
+    border: 1px solid black;
+    background-color: yellow;
+
+}
+
+#boggle_board{
+   border: 1px solid black; 
+   text-align: center;
+   table-layout: fixed;
+   font-size: 1.5rem;
+   width: 500px;
+   height: 500px;
+   background-color: orange;
+   font-weight: bold;
+}
+
+#form_sec, #score_sec, #stats_sec {
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+#score_sec{
+    margin-left: 20px;
+}
+
+#stats_sec td{
+    text-align: right;
+}
+
+#high_score, #games_played{
+    text-align: left;
+}
+
+#game_container{
+    display: flex;
+}
+
+#reset_game.hidden{
+    visibility: hidden;
+}
+
+p {
+    font-size:2rem;
+}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Boggle!
+{% endblock %}
+
+{% block content %}
+<div id="game_container">
+    <table id="boggle_board">
+        {% for cell in session['board'] %}
+        <tr>
+            {% for item in cell %}
+            <td> {{ item }} </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <section id="score_sec">
+        <table>
+            <tr>
+                <td>Timer:</td>
+                <td id="timer">60</td>
+            </tr>
+            <tr>
+                <td>Score:</td>
+                <td id="score">0</td>
+            </tr>
+        </table>
+    </section>
+</div>
+{% endblock %}
+
+{% block form_content %}
+<form>
+    <label for="guess">Guess a word: </label>
+    <input type="text" id="guess" name="guess">
+    <button id="guess_submit" action="/guess" method="POST">Submit Guess!</button>
+</form>
+{% endblock %}
+
+{% block response_content %}
+<p>{{ response }}</p>
+{% endblock %}
+
+{% block stats_content %}
+<table>
+    <tr>
+        <td>High Score:</td>
+        <td id="high_score">
+            {% if session['high_score'] %}
+                {{session['high_score']}}
+            {% else %}
+            0
+            {% endif %}
+        </td>
+    </tr>
+    <tr>   
+        <td>Games played:</td>
+        <td id="games_played">
+            {% if session['games_played'] %}
+                {{session['games_played']}}
+            {% else %}
+            0
+            {% endif %}
+        </td>
+    </tr>
+</table>
+{% endblock %}
